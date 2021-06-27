@@ -24,4 +24,11 @@ Route::get('/', function () {
 
 // Route::get('/comics/{id}', 'ComicController@show') ->name('comics.show'); 
 
+// Route::match(['PUT', 'PATCH'], '/comics/{id}', 'ComicController@update') ->name('comics.update'); 
+
+// Route::delete('comics/{id}', 'ComicController@destroy')->name('comics.destroy');
+
+// Route::get('/comics/{id}/edit', 'ComicController@edit') ->name('comics.edit'); 
+
+
 route::resource('/comics', 'ComicController');

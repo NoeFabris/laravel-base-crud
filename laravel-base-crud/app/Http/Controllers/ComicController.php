@@ -41,6 +41,13 @@ class ComicController extends Controller
     {
         $newComicData = $request->all();
 
+        $request->validate([
+
+            'title'=>'required',
+            'price'=>'required'
+
+        ]);
+
         $newComic = new Comic();
         // $newComic->title = $newComicData['title'];
         // $newComic->price = $newComicData['price'];
@@ -93,6 +100,13 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate([
+
+            'title'=>'required',
+            'price'=>'required'
+
+        ]);
+        
         $formData = $request->all();
         $comic->update($formData);
 

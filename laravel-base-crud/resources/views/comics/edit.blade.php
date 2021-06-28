@@ -6,6 +6,16 @@
 
 <a href="{{ route('comics.index') }}">Torna all'elenco completo</a>
 
+@if(count($errors->all()) > 0)
+    
+    <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+            <p>{{$error}}</p>
+        @endforeach
+    </div>
+
+@endif
+
 <form action="{{ route('comics.update', $comic->id)}}" method="post">
     @csrf
 
